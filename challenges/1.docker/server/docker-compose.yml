@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  laravel:
+    build:
+      context: ./node
+      dockerfile: ./Dockerfile
+    image: maiconrs95/node
+    container_name: node
+    networks:
+      - app
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+    image: maiconrs95/nginx
+    container_name: nginx
+    networks:
+      - app
+    ports:
+      - "8080:80"
+
+networks:
+  app:
+    driver: bridge
