@@ -10,6 +10,6 @@ To do it, I used two images:
 Running image:
 
 ```
-docker run maiconrs95/fullcyle
+docker run maiconrs95/fullcycle
 # Output: Full Cycle Rocks!!
 ```
