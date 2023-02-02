@@ -21,6 +21,20 @@ services:
     ports:
       - "8080:80"
 
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=users
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - app
+
 networks:
   app:
     driver: bridge

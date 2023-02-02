@@ -1,2 +1,3 @@
 docker
 challenges/**/node_modules
+challenges/**/mysql/**
