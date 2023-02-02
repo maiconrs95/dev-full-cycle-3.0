@@ -9,3 +9,5 @@ RUN npm install
 COPY . .
 
 ENTRYPOINT [ "node", "server.js" ]
+
+EXPOSE 3000
