@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
-const Home = require("./pages/Home");
+const Home = require("./views/Home");
+const Create = require("./views/Create");
+
+const UserModel = require("./models/User");
 
 app.use((req, _, next) => {
     console.log(req.method, req.url);
@@ -12,11 +15,11 @@ app.get("/", async (_, res) => {
     res.send(Page);
 });
 
-// app.post("/", async (req, res) => {
-//     User.create(req.body?.name);
-//     const Page = await Home();
-//     res.send(Page);
-// });
+app.get("/create", async (req, res) => {
+    UserModel.create(req.query?.name);
+    const Page = await Create();
+    res.send(Page);
+});
 
 const PORT = 3000;
 

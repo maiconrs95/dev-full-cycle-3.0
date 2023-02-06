@@ -19,26 +19,4 @@ const User = {
         }),
 };
 
-const Page = async () => {
-    const users = await User.get();
-    const HAS_USERS = Boolean(users.length);
-
-    const Element = `
-       <h1>Full Cycle Rocks!</h1>
-        ${
-            HAS_USERS
-                ? `
-                    <ul>
-                        ${users
-                            .map((user) => `<li>${user.id} - ${user.name}</li>`)
-                            .join("")}
-                    </ul>
-                `
-                : ""
-        }
-    `;
-
-    return Element;
-};
-
-module.exports = Page;
+module.exports = User;
