@@ -5,8 +5,14 @@ const Page = async () => {
     const HAS_USERS = Boolean(users.length);
 
     const Element = `
-       <h1>Full Cycle Rocks!</h1>
-       <a href="/create">Create</a>
+        <h1>Full Cycle Rocks!</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/create">Create</a>
+                </li>
+            </ul>
+        </nav>
         ${
             HAS_USERS
                 ? `

@@ -1,44 +1,45 @@
 version: '3'
 
 services:
-  laravel:
-    build:
-      context: ./node
-      dockerfile: ./Dockerfile
-    image: maiconrs95/node
-    container_name: node
-    tty: true
-    networks:
-      - app
-    volumes:
-      - ./node:/app
+    app:
+        entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node index.js
+        build:
+            context: ./node
+            dockerfile: ./Dockerfile
+        image: maiconrs95/node
+        container_name: app
+        tty: true
+        networks:
+            - app
+        volumes:
+            - ./node:/app
 
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: ./Dockerfile
-    image: maiconrs95/nginx
-    container_name: nginx
-    tty: true
-    networks:
-      - app
-    ports:
-      - "8080:80"
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: ./Dockerfile
+        image: maiconrs95/nginx
+        container_name: nginx
+        tty: true
+        networks:
+            - app
+        ports:
+            - "8080:80"
 
-  db:
-    image: mysql:5.7
-    command: --innodb-use-native-aio=0
-    container_name: db
-    restart: always
-    tty: true
-    volumes:
-      - ./mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=users
-      - MYSQL_ROOT_PASSWORD=root
-    networks:
-      - app
+    db:
+        image: mysql:5.7
+        command: --innodb-use-native-aio=0
+        container_name: db
+        restart: always
+        tty: true
+        volumes:
+            - ./mysql:/var/lib/mysql
+        environment:
+            - MYSQL_DATABASE=users
+            - MYSQL_ROOT_PASSWORD=root
+        networks:
+            - app
 
 networks:
-  app:
-    driver: bridge
+    app:
+        driver: bridge
