@@ -22,7 +22,7 @@ const Page = async () => {
                             .join("")}
                     </ul>
                 `
-                : ""
+                : "<p>Empty list. Add some users in /create page.</p>"
         }
     `;
 
