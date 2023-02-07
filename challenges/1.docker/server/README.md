@@ -17,4 +17,4 @@ docker compose up -d # docker-compose up -d - it depends you docker version
 # Users List
 ```
 
-At first runnig, you won't have any user do be listed. To create a new user, you can access `/create` page an then back to the home page.
+To create a new user, you can access `/create` page an then back to the home page.
