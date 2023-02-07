@@ -11,7 +11,7 @@ To do it, I used three images:
 Building and running image:
 
 ```
-docker compose up -d # docker-compose up -d - it depends you docker version
+docker compose up -d # docker-compose up -d depending your docker/compose version
 # Nav
 # Full Cycle Rocks!!
 # Users List
