@@ -17,7 +17,7 @@ docker compose up -d # docker-compose up -d depending your docker/compose versio
 # Users List
 ```
 
-After server is started, you will see in the console the log:
+After server is started, you will see in your console:
 
 ```
 app is running on port: 3000
@@ -25,4 +25,4 @@ app is running on port: 3000
 
 And then, you can access `localhost:8080` using you browser to see the app on line.
 
-To create a new user, you can access `/create` page an then back to the home page.
+To create a new user, you can access `/create` page and then, back to the home page.
