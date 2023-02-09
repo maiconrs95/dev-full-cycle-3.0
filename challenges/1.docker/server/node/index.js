@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const Home = require("./views/Home");
 const Create = require("./views/Create");
-const con = require("./connection");
+const connection = require("./connection");
 
 const UserModel = require("./models/User");
 
@@ -25,7 +25,7 @@ app.get("/create", async (req, res) => {
 const PORT = 3000;
 
 app.listen(PORT, async () => {
-    con.query(
+    connection.query(
         "CREATE TABLE IF NOT EXISTS people (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50), PRIMARY KEY (id));"
     );
 
@@ -33,7 +33,7 @@ app.listen(PORT, async () => {
     const HAS_USERS = Boolean(users.length);
 
     if (!HAS_USERS) {
-        con.query("INSERT INTO people (name) values ('Jogador Nº 1');");
+        connection.query("INSERT INTO people (name) values ('Jogador Nº 1');");
     }
 
     console.log(`app is running on port: ${PORT}`);
