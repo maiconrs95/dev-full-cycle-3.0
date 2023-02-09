@@ -25,6 +25,6 @@ After server is started, you will see in your console:
 app is running on port: 3000
 ```
 
-And then, you can access `localhost:8080` using you browser to see the app on line.
+And then, you can access `localhost:8080` using your browser to see the app on line.
 
 To create a new user, you can access `/create` page and then, back to the home page.
