@@ -12,12 +12,14 @@ Building and running image:
 
 ```
 docker compose up -d # docker-compose up -d depending your docker/compose version
-# Nav
+# Output:
 # Full Cycle Rocks!!
+# Nav
 # Users List
 ```
 
 After server is started, you will see in your console:
+
 
 ```
 app is running on port: 3000
