@@ -2,9 +2,9 @@ import EventHandlerInterface from "../../../@shared/event/event-handler.interfac
 import ProductCreatedEvent from "../product-created.event";
 
 export default class SendEmailWhenProductIsCreatedHandler
-  implements EventHandlerInterface<ProductCreatedEvent>
+    implements EventHandlerInterface<ProductCreatedEvent>
 {
-  handle(event: ProductCreatedEvent): void {
-    console.log(`Sending email to .....`); 
-  }
+    handle(event: ProductCreatedEvent): void {
+        console.log(event, `Sending email to .....`);
+    }
 }
