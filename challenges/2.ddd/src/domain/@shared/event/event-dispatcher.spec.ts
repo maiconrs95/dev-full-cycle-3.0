@@ -5,7 +5,9 @@ import Log1WhenUserIsCreatedHandler from "../../customer/event/handler/envia-con
 import Log2WhenUserIsCreatedHandler from "../../customer/event/handler/envia-console-log2.handler";
 import LogWhenAdressIsChangedHandler from "../../customer/event/handler/envia-console-log.handler";
 
-import CustomerEvent from '../../customer/event/customer.event';
+import CustomerCreatedEvent from '../../customer/event/customer-created.event';
+import AddressUpdatedEvent from '../../customer/event/address-updated.event';
+
 import Customer from '../../customer/entity/customer';
 import Address from '../../customer/value-object/address';
 
@@ -19,14 +21,14 @@ describe('Domain events tests', () => {
             const spyLog1EventHandler = jest.spyOn(log1WhenUserIsCreatedHandler, "handle");
             const spyLog2EventHandler = jest.spyOn(log2WhenUserIsCreatedHandler, "handle");
 
-            eventDispatcher.register("CustomerEvent", log1WhenUserIsCreatedHandler);
-            eventDispatcher.register("CustomerEvent", log2WhenUserIsCreatedHandler);
+            eventDispatcher.register("CustomerCreatedEvent", log1WhenUserIsCreatedHandler);
+            eventDispatcher.register("CustomerCreatedEvent", log2WhenUserIsCreatedHandler);
 
             expect(
-                eventDispatcher.getEventHandlers["CustomerEvent"][0]
+                eventDispatcher.getEventHandlers["CustomerCreatedEvent"][0]
             ).toMatchObject(log1WhenUserIsCreatedHandler);
 
-            const customerCreatedEvent = new CustomerEvent({});
+            const customerCreatedEvent = new CustomerCreatedEvent({});
 
             eventDispatcher.notify(customerCreatedEvent);
 
@@ -34,7 +36,7 @@ describe('Domain events tests', () => {
             expect(spyLog2EventHandler).toHaveBeenCalled();
         });
 
-        it('should notify when a Customer address is changed', () => {
+        it('should notify when a Customer address is updated', () => {
             const eventDispatcher = new EventDispatcher();
             const eventHandler = new LogWhenAdressIsChangedHandler();
 
@@ -44,13 +46,13 @@ describe('Domain events tests', () => {
 
             const spyEventHandler = jest.spyOn(eventHandler, "handle");
 
-            eventDispatcher.register("CustomerEvent", eventHandler);
+            eventDispatcher.register("AddressUpdatedEvent", eventHandler);
 
             expect(
-                eventDispatcher.getEventHandlers["CustomerEvent"][0]
+                eventDispatcher.getEventHandlers["AddressUpdatedEvent"][0]
             ).toMatchObject(eventHandler);
 
-            const customerCreatedEvent = new CustomerEvent({
+            const customerCreatedEvent = new AddressUpdatedEvent({
                 id: customer.id,
                 name: customer.name,
                 address: address.toString()
