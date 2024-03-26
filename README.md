@@ -13,7 +13,7 @@ Implemente os testes de unidade e integração nos quatro use cases.
 
 * A linguagem de programação para este desafio é TypeScript
 
-![product-usecases.](.challenges/3.clean-architecture/files/product-usecases.png)
+![product-usecases.](./challenges/3.clean-architecture/files/product-usecases.png)
 
 ## Notification Pattern em Products
 
@@ -25,5 +25,5 @@ Adicione um teste que acumule dois erros ao mesmo tempo.
 
 * A linguagem de programação para este desafio é TypeScript
 
-![product-usecases.](.challenges/3.clean-architecture/files/notification-patterns.png)
+![product-usecases.](./challenges/3.clean-architecture/files/notification-patterns.png)
 
