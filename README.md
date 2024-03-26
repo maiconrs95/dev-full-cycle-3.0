@@ -15,6 +15,11 @@ Implemente os testes de unidade e integração nos quatro use cases.
 
 ![product-usecases.](./challenges/3.clean-architecture/files/product-usecases.png)
 
+run
+```
+ cd challenges/3.clean-architecture/ && npm i && npm run test
+```
+
 ## Notification Pattern em Products
 
 Aprendemos que o notification pattern nos auxilia como um container acumulador de erros para que possamos de uma forma mais simples retornarmos nossos erros todos de uma vez evitando assim a geração excessiva de exceções.
@@ -27,3 +32,7 @@ Adicione um teste que acumule dois erros ao mesmo tempo.
 
 ![product-usecases.](./challenges/3.clean-architecture/files/notification-patterns.png)
 
+run
+```
+ cd challenges/3.clean-architecture/ && npm i && npm run test
+```
