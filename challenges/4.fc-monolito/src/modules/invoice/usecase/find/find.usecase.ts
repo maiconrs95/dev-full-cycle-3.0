@@ -17,7 +17,7 @@ export default class GenerateInvoiceUseCase {
             document: result.document,
             address: result.address,
             items: result.items,
-            total: result.items.reduce((prev, curr) => prev + curr.price, 0),
+            total: result?.items?.reduce((prev, curr) => prev + curr.price, 0),
             createdAt: result.createdAt,
         }
     }
