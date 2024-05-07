@@ -1,4 +1,5 @@
 export interface GenerateInvoiceFacadeInputDto {
+    id?: string
     name: string;
     document: string;
     street: string;
@@ -39,10 +40,7 @@ export interface FindInvoiceFacadeOutputDTO {
     createdAt: Date;
 }
 
-
-
-
-export interface InvoiceFacadeInterface {
+export default interface InvoiceFacadeInterface {
     generate(input: GenerateInvoiceFacadeInputDto): Promise<void>;
     find(input: FindInvoiceFacadeInputDTO): Promise<FindInvoiceFacadeOutputDTO>;
 }

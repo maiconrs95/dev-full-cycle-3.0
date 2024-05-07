@@ -1,4 +1,5 @@
 export interface GenerateInvoiceUseCaseInputDto {
+    id?: string;
     name: string;
     document: string;
     street: string;

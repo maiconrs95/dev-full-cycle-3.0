@@ -6,9 +6,7 @@ import ClientAdmFacade from "./client-adm.facade"
 import ClientAdmFacadeFactory from "../factory/client-adm.facade.factory"
 import Address from "../../@shared/domain/value-object/address"
 
-
 describe("Client Adm Facade test", () => {
-
   let sequelize: Sequelize
 
   beforeEach(async () => {
