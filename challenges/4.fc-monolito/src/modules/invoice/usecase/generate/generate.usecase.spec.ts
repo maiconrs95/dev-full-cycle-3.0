@@ -1,3 +1,5 @@
+import Id from '../../../@shared/domain/value-object/id.value-object';
+import InvoiceItem from '../../domain/item.entity';
 import GenerateInvoiceUseCase from './generate.usecase'
 
 const MockRepository = () => {
@@ -23,16 +25,16 @@ describe("generate Invoice Usecase unit test", () => {
             zipCode: 'zip-code-1',
             items: [
                 {
-                    id: 'uuid-item-1',
+                    id: new Id('1'),
                     name: 'item 1',
                     price: 100
                 },
                 {
-                    id: 'uuid-item-1',
+                    id: new Id('2'),
                     name: 'item 1',
                     price: 150
                 }
-            ],
+            ].map(({ id, name, price }) => new InvoiceItem({ id, name, price })),
         };
 
         const result = await usecase.execute(input);

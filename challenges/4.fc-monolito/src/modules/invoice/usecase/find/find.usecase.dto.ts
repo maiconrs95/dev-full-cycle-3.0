@@ -1,3 +1,5 @@
+import InvoiceItem from '../../domain/item.entity';
+
 export interface FindInvoiceUseCaseInputDTO {
     id: string;
 }
@@ -14,11 +16,7 @@ export interface FindInvoiceUseCaseOutputDTO {
         state: string;
         zipCode: string;
     };
-    items: {
-        id: string;
-        name: string;
-        price: number;
-    }[];
+    items: InvoiceItem[];
     total: number;
     createdAt: Date;
 }

@@ -2,6 +2,7 @@ import FindInvoiceUseCase from './find.usecase'
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import Address from "../../../@shared/domain/value-object/address";
 import Invoice from '../../domain/invoice.entity';
+import InvoiceItem from '../../domain/item.entity';
 
 const invoice = new Invoice({
     id: new Id('1'),
@@ -17,16 +18,16 @@ const invoice = new Invoice({
     ),
     items: [
         {
-            id: 'uuid-item-1',
+            id: new Id('uuid-item-1'),
             name: 'item 1',
             price: 100
         },
         {
-            id: 'uuid-item-1',
+            id: new Id('uuid-item-1'),
             name: 'item 1',
             price: 150
         }
-    ],
+    ].map(({ id, name, price }) => new InvoiceItem({ id, name, price })),
 })
 
 const MockRepository = () => {
