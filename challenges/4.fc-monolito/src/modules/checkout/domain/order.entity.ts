@@ -11,7 +11,7 @@ type OrderProps = {
     invoiceId?: string;
 }
 
-export default class Order extends BaseEntity {
+export class Order extends BaseEntity {
     private _client: Client;
     private _products: Product[];
     private _status: string;
@@ -48,4 +48,10 @@ export default class Order extends BaseEntity {
     get status(): string {
         return this._status
     }
+
+    get invoiceId() {
+        return this._invoiceId;
+    }
 }
+
+export default Order;

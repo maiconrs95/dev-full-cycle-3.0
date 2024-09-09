@@ -1,13 +1,6 @@
 import AggregateRoot from "../../@shared/domain/entity/aggregate-root.interface";
 import BaseEntity from "../../@shared/domain/entity/base.entity";
 import Id from "../../@shared/domain/value-object/id.value-object";
-import Address from "../../@shared/domain/value-object/address"
-
-type Item = {
-    id: string;
-    name: string;
-    price: number;
-};
 
 type Props = {
     id: Id;

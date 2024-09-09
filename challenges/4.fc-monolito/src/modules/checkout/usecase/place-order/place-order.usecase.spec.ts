@@ -204,6 +204,7 @@ describe("PlaceOrderUseCase unit test", () => {
         null,
         // @ts-ignore
         mockPaymentFacade,
+        // @ts-ignore
         mockInvoiceFacade,
         mockOrderRepository
       );

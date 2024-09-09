@@ -2,13 +2,13 @@ import Id from '../../../@shared/domain/value-object/id.value-object';
 import UseCaseInterface from '../../../@shared/usecase/use-case.interface';
 import { ClientAdmFacadeInterface } from '../../../client-adm/facade/client-adm.facade.interface';
 import {InvoiceFacadeInterface} from '../../../invoice/facade/invoice.facade.interface';
-import PaymentFacadeInterface from '../../../payment/facade/payment.facade';
+import PaymentFacadeInterface from '../../../payment/facade/facade.interface';
 import ProductAdmFacadeInterface from '../../../product-adm/facade/product-adm.facade.interface';
 import StoreCatalogFacadeInterface from '../../../store-catalog/facade/store-catalog.facade.interface';
 import Client from '../../domain/client.entity';
 import Order from '../../domain/order.entity';
 import Product from '../../domain/product.entity';
-import CheckoutGateway from '../../gateway/checkout.gatewawy';
+import CheckoutGateway from '../../gateway/checkout.gateway';
 import { PlaceOrderInputDto, PlaceOrderOutputDto } from './place-order.dto';
 
 export class PlaceOrderUseCase implements UseCaseInterface {

@@ -4,7 +4,7 @@ import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
   tableName: "transactions",
   timestamps: false,
 })
-export default class TransactionModel extends Model {
+export class TransactionModel extends Model {
   @PrimaryKey
   @Column({ allowNull: false })
   id: string;
@@ -24,3 +24,5 @@ export default class TransactionModel extends Model {
   @Column({ allowNull: false, field: "updated_at" })
   updatedAt: Date;
 }
+
+export default TransactionModel;

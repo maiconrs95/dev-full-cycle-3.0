@@ -1,4 +1,12 @@
-import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { Column, Model, PrimaryKey, Table, DataType } from "sequelize-typescript";
+
+interface ProductData {
+    id: string;
+    name: string;
+    price: number;
+    createdAt: Date;
+    updatedAt: Date;
+}
 
 @Table({
     tableName: 'invoice',
@@ -33,12 +41,9 @@ export class InvoiceModel extends Model {
     @Column({ allowNull: false })
     zipcode: string
 
-    // @Column({ allowNull: true })
-    // items: {
-    //     id: string;
-    //     name: string;
-    //     price: number;
-    // }[]
+
+    @Column({ allowNull: true, type: DataType.JSON })
+    items: ProductData[];
 
     @Column({ allowNull: false })
     createdAt: Date

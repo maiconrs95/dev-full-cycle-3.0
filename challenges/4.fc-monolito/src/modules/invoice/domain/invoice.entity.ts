@@ -20,7 +20,7 @@ type Props = {
     updatedAt?: Date
 };
 
-export default class Invoice extends BaseEntity implements AggregateRoot {
+export class Invoice extends BaseEntity implements AggregateRoot {
     private _name: string;
     private _document: string;
     private _address: Address;
@@ -50,3 +50,5 @@ export default class Invoice extends BaseEntity implements AggregateRoot {
         return this._items;
     }
 }
+
+export default Invoice;

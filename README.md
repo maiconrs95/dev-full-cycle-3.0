@@ -34,5 +34,14 @@ Adicione um teste que acumule dois erros ao mesmo tempo.
 
 run
 ```
- cd challenges/3.clean-architecture/ && npm i && npm run test
+cd challenges/3.clean-architecture/ && npm i && npm run test
+```
+
+## 4.FC-MONOLITO
+
+![product-usecases.](./challenges/4.fc-monolito/files/4.fc-monolito.jpeg)
+
+run
+```
+cd challenges/4.fc-monolito/ && npm i && npm run test
 ```

@@ -4,7 +4,7 @@ import Invoice from '../domain/invoice.entity';
 import InvoiceGateway from '../gateway/invoice.gateway';
 import { InvoiceModel } from './invoice.model'
 
-export default class InvoiceRepository implements InvoiceGateway {
+export class InvoiceRepository implements InvoiceGateway {
     async generate(entity: Invoice): Promise<void> {
         await InvoiceModel.create({
             id: entity.id.id,
@@ -47,3 +47,5 @@ export default class InvoiceRepository implements InvoiceGateway {
         });
     }
 }
+
+export default InvoiceRepository;
