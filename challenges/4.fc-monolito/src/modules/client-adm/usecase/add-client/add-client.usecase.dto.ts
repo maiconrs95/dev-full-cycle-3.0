@@ -1,20 +1,17 @@
-import Address from "../../../@shared/domain/value-object/address"
-
-
 export interface AddClientInputDto {
-  id?: string
-  name: string
-  email: string
-  document: string
-  address: Address
+    id?: string;
+    name: string;
+    email: string;
+    address: string;
+    document: string;
 }
 
 export interface AddClientOutputDto {
-  id: string
-  name: string
-  email: string
-  document: string
-  address: Address
-  createdAt: Date
-  updatedAt: Date
+    id: string;
+    name: string;
+    email: string;
+    address: string;
+    document: string;
+    createdAt: Date;
+    updatedAt: Date;
 }

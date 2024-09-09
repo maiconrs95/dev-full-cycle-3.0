@@ -4,7 +4,7 @@ import InvoiceRepository from "../repository/invoice.repository"
 import GenerateUseCase from "../usecase/generate/generate.usecase"
 import FindUseCase from "../usecase/find/find.usecase"
 
-import InvoiceFacade from "./invoice.facade"
+import {InvoiceFacade} from "./invoice.facade"
 
 describe("Invoice Facade test", () => {
     let sequelize: Sequelize

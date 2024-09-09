@@ -9,7 +9,7 @@ type ProductProps = {
     salesPrice: number;
 }
 
-export default class Product extends BaseEntity implements AggregateRoot {
+export class Product extends BaseEntity implements AggregateRoot {
     private _name: string
     private _description: string
     private _salesPrice: number
@@ -33,3 +33,5 @@ export default class Product extends BaseEntity implements AggregateRoot {
         return this._salesPrice
     }
 }
+
+export default Product;
