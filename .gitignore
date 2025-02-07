@@ -1,3 +1,4 @@
 docker
 challenges/**/node_modules
 challenges/**/mysql/**
+challenge/5.event-driven-architecture/wallet-core-service/docker
