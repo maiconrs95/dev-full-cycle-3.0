@@ -19,22 +19,22 @@ services:
       - kafka
       - mysql
 
-#   ms-balance:
-#     build:
-#       context: ms-balance
-#     volumes:
-#       - ./ms-balance:/app
-#     environment:
-#       - DB_NAME=ms_balance
-#       - DB_USERNAME=root
-#       - DB_PASSWORD=root
-#       - DB_HOST=mysql
-#     ports:
-#       - 3003:3003
-#     depends_on:
-#       - kafka
-#       - mysql
-#     command: /bin/sh -c "npm install && npm rebuild sqlite3 && npm run dev"
+  ms-balance:
+    build:
+      context: ms-balance
+    volumes:
+      - ./ms-balance:/app
+    environment:
+      - DB_NAME=ms_balance
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_HOST=mysql
+    ports:
+      - 3003:3003
+    depends_on:
+      - kafka
+      - mysql
+    command: /bin/sh -c "npm install && npm rebuild sqlite3 && npm run dev"
 
   mysql:
     image: mysql:8.0
