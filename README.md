@@ -45,3 +45,10 @@ run
 ```
 cd challenges/4.fc-monolito/ && npm i && npm run test
 ```
+
+## 5. MICROSERVICES & EDA (Event-Driven Architecture)
+
+run
+```
+cd challenges/5.event-driven-architecture/ && docker compose up -d
+```
